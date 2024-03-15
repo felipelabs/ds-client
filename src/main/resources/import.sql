@@ -1,0 +1,10 @@
+insert into tb_client (name,cpf, income, birthday,children) values ("Maria Silva", "12345678901",6500.0,"1974-07-20",2);
+insert into tb_client (name,cpf, income, birthday,children) values ("Jõao Mario", "12345678901",4500.0,"1956-04-20",3);
+insert into tb_client (name,cpf, income, birthday,children) values ("Alex Mason", "12345678901",2000.0,"1989-12-20",1);
+insert into tb_client (name,cpf, income, birthday,children) values ("John Doe", "12345678901",7000.0,"1900-11-20",1);
+insert into tb_client (name,cpf, income, birthday,children) values ("James Silva", "12345678901",1000.0,"2000-10-20",7);
+insert into tb_client (name,cpf, income, birthday,children) values ("Carlos Ferreira", "12345678901",500.0,"2001-09-20",7);
+insert into tb_client (name,cpf, income, birthday,children) values ("Felipe Neves", "12345678901",200.0,"1995-01-20",1);
+insert into tb_client (name,cpf, income, birthday,children) values ("Fabio Oliveira", "12345678901",16500.0,"1987-01-20",3);
+insert into tb_client (name,cpf, income, birthday,children) values ("Cristiano Ronaldo", "12345678901",46500.0,"1990-02-20",3);
+insert into tb_client (name,cpf, income, birthday,children) values ("Gareth Bale", "12345678901",90000.0,"1970-03-20",2);
