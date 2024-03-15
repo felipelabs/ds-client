@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 
 @Entity
@@ -16,22 +17,23 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank
 	private String name;
 	private String cpf;
 	private Double income;
 	@PastOrPresent
-	private LocalDate birthday;
+	private LocalDate birthDate;
 	private Integer children;
 	
 	public Client(){		
 	}
 
-	public Client(Long id, String name,String cpf, Double income, LocalDate birthday, Integer children) {
+	public Client(Long id, String name,String cpf, Double income, LocalDate birthDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
 		this.income = income;
-		this.birthday = birthday;
+		this.birthDate = birthDate;
 		this.children = children;
 	}
 
@@ -67,12 +69,12 @@ public class Client {
 		this.income = income;
 	}
 
-	public LocalDate getBirthday() {
-		return birthday;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirthday(LocalDate birthday) {
-		this.birthday = birthday;
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public Integer getChildren() {
