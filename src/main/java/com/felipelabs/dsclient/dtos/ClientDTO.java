@@ -1,30 +1,29 @@
-package com.felipelabs.dsclient.entities;
+package com.felipelabs.dsclient.dtos;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.felipelabs.dsclient.entities.Client;
 
-@Entity
-@Table(name = "tb_client")
-public class Client {
+import jakarta.validation.constraints.PastOrPresent;
+import jakarta.validation.constraints.Positive;
+
+
+
+public class ClientDTO {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String cpf;
+	@Positive(message = "O preço deve ser positivo")
 	private Double income;
+	@PastOrPresent
 	private LocalDate birthDate;
 	private Integer children;
 	
-	public Client(){		
+	public ClientDTO() {		
 	}
 
-	public Client(Long id, String name,String cpf, Double income, LocalDate birthDate, Integer children) {
+	public ClientDTO(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
 		this.id = id;
 		this.name = name;
 		this.cpf = cpf;
@@ -32,6 +31,17 @@ public class Client {
 		this.birthDate = birthDate;
 		this.children = children;
 	}
+	
+	public ClientDTO(Client client) {
+		id = client.getId();
+		name = client.getName();
+		cpf = client.getCpf();
+		income = client.getIncome();
+		birthDate = client.getBirthDate();
+		children = client.getChildren();
+		
+	}
+	
 
 	public Long getId() {
 		return id;
@@ -47,7 +57,7 @@ public class Client {
 
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
 
 	public String getCpf() {
 		return cpf;
@@ -79,6 +89,6 @@ public class Client {
 
 	public void setChildren(Integer children) {
 		this.children = children;
-	}		
+	}			
 
 }
